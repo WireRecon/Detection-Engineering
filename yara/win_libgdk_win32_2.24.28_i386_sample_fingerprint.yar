@@ -4,7 +4,7 @@ rule WIN_LibGDK_Win32_2_24_28_i386_SampleFingerprint
 {
   meta:
     description = "Fingerprints a Windows i386 DLL that self-identifies as GTK+ libgdk-win32-2.0-0.dll v2.24.28. This binary has been observed renamed in malicious bundles; use separate telemetry to detect unusual load/execution paths."
-    author = "Michael"
+    author = "WireRecon"
     date = "2026-01-26"
     scope = "sample_fingerprint"
     false_positives = "Possible on closely matching GTK/GDK builds; intended for this observed sample."
@@ -30,3 +30,4 @@ rule WIN_LibGDK_Win32_2_24_28_i386_SampleFingerprint
     $orig and
     2 of ($desc, $updt, $x1, $x2)
 }
+
