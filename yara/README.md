@@ -15,3 +15,6 @@ See: `docs/AsyncRAT_Writeup.md` for analysis notes.
 - **win_libgdk_win32_2.24.28_i386_sample_fingerprint.yar**  
   Fingerprint-style rule based on unique strings from a Qbot-related DLL sample.
 
+See: `docs/Qbot_Libgdk_Writeup.md` for analysis notes.
+
+
