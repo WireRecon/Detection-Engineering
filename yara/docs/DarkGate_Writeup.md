@@ -77,5 +77,5 @@ yara -w MAL_WIN_DarkGate_Loader_WindowsApps_ResourceDropper.yar darkgate.exe
 
 ### False-positive sanity check (benign-ish) 
 Command:
-```bash
+```
 yara -r -w MAL_WIN_DarkGate_PayloadDLL_Cryptbase_Wldp_Masquerade.yar /usr/lib/
