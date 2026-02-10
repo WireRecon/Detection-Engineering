@@ -14,4 +14,4 @@ This rule detects:
 
 Full technical write-up:
 See the Detection Engineering repository:
-https://github.com/<your-username>/Detection-Engineering/tree/main/yara/docs
+https://github.com/<WireRecon>/Detection-Engineering/tree/main/yara/docs
