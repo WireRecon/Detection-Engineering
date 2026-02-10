@@ -41,4 +41,3 @@ Strings indicate attempts to weaken defenses and modify network behavior:
   - `cmd.exe`
   - `/c taskkill.exe /im chrome.exe /f`
 
-T
