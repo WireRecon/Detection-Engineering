@@ -35,7 +35,11 @@ The rule requires a cluster of high-signal artifacts:
 yara -s -w MAL_WIN_HTA_AdobeUpdater_Lab_Dropper.yar AdobeUpdater.hta
 
 ```
-## False-positive sanity check (benign-ish)
+### False-positive sanity check (benign-ish)
 ```bash
 yara -r -w MAL_WIN_HTA_AdobeUpdater_Lab_Dropper.yar /usr/share/doc 2>/dev/null | head
 ```
+
+###Related Lab
+Full intrusion walkthrough (case study repo):
+https://github.com/WireRecon/RedTeam-BlueTeam-Intrusion-Detection-v1
