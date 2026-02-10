@@ -17,4 +17,13 @@ See: `docs/AsyncRAT_Writeup.md` for analysis notes.
 
 See: `docs/Qbot_Libgdk_Writeup.md` for analysis notes.
 
+## DarkGate loader + payload DLLs
+- **MAL_WIN_DarkGate_Loader_WindowsApps_ResourceDropper.yar**  
+  Detects a Windows x64 loader/dropper that stages embedded resources into `WindowsApps` and launches a staged DLL via `rundll32`, with CDN/module path artifacts.
+
+- **MAL_WIN_DarkGate_PayloadDLL_Cryptbase_Wldp_Masquerade.yar**  
+  Detects DarkGate-related x64 payload DLLs masquerading as Windows system libraries (`cryptbase.dll` / `wldp.dll`) via characteristic export-name sets.
+
+See: `docs/DarkGate_Writeup.md` for analysis notes.
+
 
