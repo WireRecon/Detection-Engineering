@@ -40,6 +40,6 @@ yara -s -w MAL_WIN_HTA_AdobeUpdater_Lab_Dropper.yar AdobeUpdater.hta
 yara -r -w MAL_WIN_HTA_AdobeUpdater_Lab_Dropper.yar /usr/share/doc 2>/dev/null | head
 ```
 
-###Related Lab
+### Related Lab
 Full intrusion walkthrough (case study repo):
 https://github.com/WireRecon/RedTeam-BlueTeam-Intrusion-Detection-v1
