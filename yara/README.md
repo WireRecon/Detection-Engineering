@@ -26,4 +26,11 @@ See: `docs/Qbot_Libgdk_Writeup.md` for analysis notes.
 
 See: `docs/DarkGate_Writeup.md` for analysis notes.
 
+## Bitdefender Trufos component (lab-labeled: latrodectus.exe)
+- **GEN_WIN_Bitdefender_Trufos_DLL.yar**  
+  Identifies Bitdefender Trufos user-mode component (TRUFOS.DLL) using a resilient cluster of dev/build artifacts and a distinctive RB* export surface (static-only classification).
+
+See: `docs/Trufos_DLL_Writeup.md` for analysis notes.
+
+
 
