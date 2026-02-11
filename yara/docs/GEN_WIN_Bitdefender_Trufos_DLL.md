@@ -73,3 +73,8 @@ All testing was performed using **static analysis only**.
 Command:
 ```bash
 yara -w GEN_WIN_Bitdefender_Trufos_DLL.yar latrodectus.exe
+
+```
+### False-positive sanity check (benign-ish)
+```bash
+yara -r -w GEN_WIN_Bitdefender_Trufos_DLL.yar /usr/lib/
