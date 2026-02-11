@@ -76,5 +76,6 @@ yara -w GEN_WIN_Bitdefender_Trufos_DLL.yar latrodectus.exe
 
 ```
 ### False-positive sanity check (benign-ish)
+Command:
 ```bash
 yara -r -w GEN_WIN_Bitdefender_Trufos_DLL.yar /usr/lib/
