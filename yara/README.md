@@ -2,6 +2,13 @@
 
 This folder contains YARA rules developed from static malware analysis and lab exercises.
 
+## Table of Contents
+- AsyncRAT (.NET)
+- Qbot sample
+- DarkGate loader + payload DLLs
+- Bitdefender Trufos component
+---
+
 ## AsyncRAT (.NET)
 - **MAL_AsyncRAT_NET_Plugins_Hosts_WalletStealer.yar**  
   Behavior-based detection for AsyncRAT-like samples using plugin, wallet, token, and hosts/proxy artifacts.
