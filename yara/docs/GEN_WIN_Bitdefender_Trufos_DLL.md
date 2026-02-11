@@ -33,7 +33,7 @@ Additional behavior-relevant static indicators (consistent with security tooling
 A single YARA rule was created to **identify Bitdefender Trufos component(s)** using a resilient cluster of:
 - Dev/build artifacts (PDB + build path fragments)
 - Distinctive export name surface (RB* functions)
-- Supporting vendor metadata
+- Supporting vendor metadata (with additional minifilter comms signals in the fallback path)
 
 ---
 
@@ -47,13 +47,14 @@ Identifies Bitdefender Trufos user-mode component (TRUFOS.DLL) via dev artifacts
 **Key detection features:**
 - `ARK23181_2` + `\trufos_dll\` + `trufos.pdb` (dev artifacts)
 - RB* export cluster (`RBCalc*`, `RBGrayscale`, `RBInvertColor`, etc.)
-- Vendor strings (`Bitdefender`, `Trufos API`, `TRUFOS.DLL`) used as supporting signals
+- Vendor strings (`Bitdefender`, `Trufos API`, `TRUFOS.DLL`)
+- Supporting minifilter comms imports (`Filter*Message`, `FilterConnectCommunicationPort`) used in the fallback path
 
 **Detection logic:**
 - PE x64 and DLL characteristic
 - Requires either:
   - 2 of (dev artifacts) + strong RB* export cluster, OR
-  - vendor metadata + strong RB* export cluster
+  - 2 of (vendor metadata) + strong RB* export cluster + 2 FLTLIB comms imports
 
 ---
 
@@ -79,3 +80,8 @@ yara -w GEN_WIN_Bitdefender_Trufos_DLL.yar latrodectus.exe
 Command:
 ```bash
 yara -r -w GEN_WIN_Bitdefender_Trufos_DLL.yar /usr/lib/
+
+
+
+
+
