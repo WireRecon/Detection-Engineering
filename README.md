@@ -7,7 +7,8 @@ This repository contains detection engineering work and lab artifacts, organized
 - `yara/` — YARA rules and write-ups (static analysis only; no detonation)
 - `kql/` — Microsoft Sentinel KQL (planned)
 - `splunk/` — Splunk SPL (planned)
-- `docs/` — General notes and references (planned)
+- `*/docs/` — Write-ups live beside their detection type (e.g., `yara/docs/`, `sigma/docs/`)
+
 
 ## Notes
 - Malware samples are analyzed using **static techniques** unless explicitly stated otherwise.
