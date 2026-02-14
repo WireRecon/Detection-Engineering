@@ -1,10 +1,11 @@
-# DE&TH Detection-Engineering
-
-This repository contains detection engineering work and lab artifacts, organized by detection language and platform.
 
 <!--<div align="center"> -->
 <img src="/assets/images/banner_2.png" alt="Cover Picture" width="75%">
 <!-- </div> -->
+
+# DE&TH Detection-Engineering
+
+This repository contains detection engineering work and lab artifacts, organized by detection language and platform.
 
 ## Structure
 - `yara/` — YARA rules and write-ups (static analysis only; no detonation)
