@@ -3,7 +3,7 @@
 <img src="/assets/images/banner_2.png" alt="Cover Picture" width="75%">
 <!-- </div> -->
 
-# DE&TH Detection-Engineering
+# Detection-Engineering
 
 This repository contains detection engineering work and lab artifacts, organized by detection language and platform.
 
