@@ -1,7 +1,7 @@
 
-<!--<div align="center"> -->
+<div align="center"> 
 <img src="/assets/images/banner_2.png" alt="Cover Picture" width="75%">
-<!-- </div> -->
+</div> 
 
 # Detection-Engineering
 
