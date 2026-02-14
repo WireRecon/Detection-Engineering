@@ -3,7 +3,7 @@
 This repository contains detection engineering work and lab artifacts, organized by detection language and platform.
 
 <!--<div align="center"> -->
-<img src="analysis/images/banner_2.png" alt="Cover Picture" width="75%"><br>
+<img src="Detection-Engineering/analysis/images/banner_2.png" alt="Cover Picture" width="75%"><br>
 <!-- </div> -->
 
 ## Structure
