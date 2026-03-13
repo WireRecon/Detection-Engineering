@@ -11,9 +11,10 @@ Qbot (QakBot) is commonly used for:
 - Downloading additional payloads
 
 This rule is intended to catch this specific sample/library string set, not all Qbot variants.
-
-## Rule
-- **win_libgdk_win32_2.24.28_i386_sample_fingerprint.yar**
+---
+## Files
+- Rules: `win_libgdk_win32_2.24.28_i386_sample_fingerprint.yar`
+---
 
 ## Analysis scope
 Static only (no detonation).
