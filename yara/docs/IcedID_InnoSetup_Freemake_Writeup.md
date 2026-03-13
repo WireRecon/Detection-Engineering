@@ -72,4 +72,4 @@ This combination provides a **resilient detection** for this sample class while 
 ## Files
 - Rule: `yara/MAL_WIN_InnoSetup_Delphi_FreemakeDecoy_OverlayLike.yar`
 
-EVIDENCE PACKET <Here>
+
