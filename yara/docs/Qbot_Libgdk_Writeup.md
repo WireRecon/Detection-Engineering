@@ -7,7 +7,7 @@
 This YARA rule is a **strict fingerprint** for a specific Windows **x86 DLL** that self-identifies as:
 - `libgdk-win32-2.0-0.dll` (GTK / GDK related)
 
-This DLL has been observed **renamed and bundled** with malicious tooling. This rule is meant to match **this exact observed sample** (high confidence), not to generically detect malware families.
+This DLL has been observed **renamed and bundled** with malware. This rule is meant to match **this exact observed sample** (high confidence), not to generically detect malware families.
 
 > Safety: Static analysis only. Do not execute unknown samples.
 
