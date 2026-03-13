@@ -18,4 +18,4 @@ This repository contains detection engineering work and lab artifacts, organized
 - Write-ups (.md) live inside each detection folder (e.g., `yara/docs/`, `sigma/docs/`) to keep documentation scoped to that detection type.
 - Malware samples are analyzed using **static techniques** unless explicitly stated otherwise.
 - Rules are written to favor **high-signal, behavior-based indicators** where possible.
- where possible.
+
