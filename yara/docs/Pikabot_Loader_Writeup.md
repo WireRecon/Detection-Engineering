@@ -87,10 +87,8 @@ This approach provides:
 
 ---
 
-## YARA Rule
-See:
-
-## MAL_Win32_Pikabot_Loader_UniqueMarker.yar
+## Files
+- Rule: `MAL_Win32_Pikabot_Loader_UniqueMarker.yar`
 
 ---
 
