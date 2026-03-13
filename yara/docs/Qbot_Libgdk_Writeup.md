@@ -76,4 +76,4 @@ That’s fine because the intent is to match a specific observed sample.
 Example scan:
 ```bash
 yara -s yara/win_libgdk_win32_2.24.28_i386_sample_fingerprint.yar <path_to_suspect_file_or_directory> 
-```
+
