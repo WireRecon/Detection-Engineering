@@ -3,11 +3,14 @@ import "pe"
 rule MAL_WIN_DarkGate_PayloadDLL_Cryptbase_Wldp_Masquerade
 {
   meta:
-    description = "Detects DarkGate-related payload DLLs masquerading as Windows system libraries (cryptbase.dll / wldp.dll) via characteristic export-name sets"
+    description = "Detects DarkGate-related payload DLLs masquerading as Windows system libraries (cryptbase.dll / wldp.dll) via characteristic export-name sets. Dropped into WindowsApps by the DarkGate loader."
     author = "WireRecon"
     date = "2026-02-09"
-    reference = "Lab analysis: darkgate.exe embedded payloads (static)"
-    tlp = "white"
+    reference = "https://bazaar.abuse.ch/sample/056286b15e58ccc9f77873ef22c42e3b098860940990dbb7543e7f469ce7a2f6"
+    hash_sha256 = "056286b15e58ccc9f77873ef22c42e3b098860940990dbb7543e7f469ce7a2f6"
+    confidence = "high"
+    tlp = "CLEAR"
+    false_positives = "Low. Legitimate cryptbase.dll and wldp.dll will not appear together or outside their expected system paths. Investigate any match outside System32."
 
   strings:
     // cryptbase masquerade export names (high signal)
