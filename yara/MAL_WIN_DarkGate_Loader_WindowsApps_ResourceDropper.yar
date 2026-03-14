@@ -31,13 +31,6 @@ rule MAL_WIN_DarkGate_Loader_WindowsApps_ResourceDropper
     $exec1 = "C:\\windows\\system32\\cleanmgr.exe" ascii
     $exec2 = "rundll32 cleanhelper.dll T34 /k funtic321 1" ascii
 
-    // C2 communication user-agent (observed in FLOSS static strings)
-    $ua1 = "WinHTTP Example/1.0" ascii
-
-    // Anti-VM / anti-analysis indicators (observed in FLOSS stack strings)
-    $avm1 = "dll_check()] [ERROR]: Virtual Machine Detected: VMW" ascii
-    $avm2 = "dll_check()] [ERROR]: Virtual Machine Detected: Vir" ascii
-
   condition:
     uint16(0) == 0x5A4D and
     pe.machine == pe.MACHINE_AMD64 and
