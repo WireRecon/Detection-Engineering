@@ -10,7 +10,7 @@ This repository contains detection engineering work and lab artifacts, organized
 ## Structure
 - `sigma/` — Sigma rules (planned)
 - `yara/` — YARA rules and static malware analysis write-ups
-- `snort/` — Snort intrusion detection rules (Working on now) 
+- `snort/` — Snort intrusion detection rules (planned) 
 - `kql/` — Microsoft Sentinel KQL (planned)
 - `splunk/` — Splunk SPL (planned)
 
