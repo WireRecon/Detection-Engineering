@@ -14,7 +14,7 @@ rule MAL_WIN_DarkGate_Loader_WindowsApps_ResourceDropper
 
   strings:
     // C2 staging / CDN module path artifacts (high signal)
-    $stage1 = "cdn3-adb1.online" wide
+    $stage1 = "cdn3-adb1.online" ascii
     $mod1   = "abdwufkw/modules/cleanhelper.png" wide
     $mod2   = "abdwufkw/modules/runsysclean.png" wide
     $mod3   = "abdwufkw/modules/legacy_l1.png" wide
