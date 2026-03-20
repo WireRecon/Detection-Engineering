@@ -7,7 +7,7 @@ rule WIN_LibGDK_Win32_2_24_28_i386_SampleFingerprint
     author = "WireRecon"
     date = "2026-01-26"
     scope = "sample_fingerprint"
-    reference = "https://bazaar.abuse.ch/sample/6a8557a2f8e1338e6edb2a07c345882389230ea24ffeba59621b7e8b56c59"
+    reference = "https://bazaar.abuse.ch/sample/6a8557a2f8e1338e6edb2a07c345882389230ea24ffeb741a59621b7e8b56c59"
     false_positives = "Possible on closely matching GTK/GDK builds; intended for this observed sample."
     sha256 = "6a8557a2f8e1338e6edb2a07c345882389230ea24ffeb741a59621b7e8b56c59"
     imphash = "a75bce97ca3ad49cfd36ed9cd9d13ddd"
