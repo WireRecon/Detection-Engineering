@@ -3,7 +3,7 @@ import "pe"
 rule GEN_WIN_Bitdefender_Trufos_DLL
 {
   meta:
-    description = "Identifies Bitdefender Trufos user-mode component (TRUFOS.DLL) via dev artifacts, RB* export surface, and Trufos-specific IPC/runtime markers. Sample observed renamed as latrodectus.exe."
+    description = "Identifies Bitdefender Trufos user-mode component (TRUFOS.DLL) via dev artifacts, RB* export surface, and Trufos-specific IPC/runtime markers. Sample observed renamed as latrodectus.exe. NOTE: This rule will fire on legitimate Bitdefender installations — intended for context-based triage only, not standalone alerting."
     author = "WireRecon"
     date = "2026-02-11"
     reference = "https://bazaar.abuse.ch/sample/aee22a35cbdac3f16c3ed742c0b1bfe9739a13469cf43b36fb2c63565111028c"
@@ -12,7 +12,7 @@ rule GEN_WIN_Bitdefender_Trufos_DLL
     hash_imphash = "dad9f669bb19a6ea9c2b335d7292cfc7"
     confidence = "high"
     tlp = "CLEAR"
-    false_positives = "Low. Legitimate TRUFOS.DLL in its expected Bitdefender installation path is benign. Any match outside a Bitdefender install directory warrants investigation."
+    false_positives = "HIGH — will match any legitimate Bitdefender installation containing TRUFOS.DLL. Intended for context-based triage only; correlate with file path and process context before alerting. Rule targets x86-64 only; an x86 build of the same component would not be caught by this rule."
 
   strings:
     /* Dev/build artifacts (highly specific) */
@@ -50,6 +50,7 @@ rule GEN_WIN_Bitdefender_Trufos_DLL
   condition:
     uint16(0) == 0x5A4D and
     pe.is_pe and
+    /* x86-64 only — an x86 build of the same component would not match this rule */
     pe.machine == pe.MACHINE_AMD64 and
     (pe.characteristics & pe.DLL) != 0 and
     (
