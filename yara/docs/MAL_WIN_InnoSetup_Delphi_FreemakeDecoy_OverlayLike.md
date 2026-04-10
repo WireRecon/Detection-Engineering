@@ -87,11 +87,15 @@ Import table confirms dropper-class behavior:
 ## Detection Logic
 
 ### Gate
+
 ```
 uint16(0) == 0x5A4D    // MZ header
+pe.is_pe               // valid PE
+not pe.is_signed       // unsigned — signed samples excluded; see limitations
 ```
 
 ### Condition
+
 ```
 ( $inno_data and $inno_msg )                            // Both core Inno Setup markers required
 2 of ($setup_hdr, $lang_ent, $lzma_cls, $jlzma)        // 2+ supporting Inno structure strings
@@ -102,7 +106,7 @@ uint16(0) == 0x5A4D    // MZ header
 
 ## False Positives / Limitations
 
-**False positives:** Low. Legitimate Freemake or Inno Setup installers will not present a failed Authenticode signature. The combination of Inno Setup internals, Freemake identity, and embedded Piriform/Avast certificate material is specific to this dropper family.
+**False positives:** Possible. The rule will match any Inno Setup 5.5.7 installer bundling Freemake Video Converter identity strings, including legitimate installers. What distinguishes this sample is a failed Authenticode signature combined with an overlay-heavy structure consistent with an embedded payload — neither trait is fully enforceable in YARA. The `not pe.is_signed` gate reduces noise but does not verify signature validity, only absence. Correlate with signature validity and overlay size via external telemetry before alerting.
 
 **Limitations:** If a future variant changes the lure identity (different software masquerade) while keeping the Inno Setup framework, the `$freemake*` clause will not fire. The `$inno_data` and `$inno_msg` markers are version-specific to Inno Setup 5.5.x — a build using a different version would require updated version strings.
 
