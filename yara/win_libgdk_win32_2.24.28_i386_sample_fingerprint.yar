@@ -8,7 +8,7 @@ rule WIN_LibGDK_Win32_2_24_28_i386_SampleFingerprint
     date = "2026-01-26"
     scope = "sample_fingerprint"
     reference = "https://bazaar.abuse.ch/sample/6a8557a2f8e1338e6edb2a07c345882389230ea24ffeb741a59621b7e8b56c59"
-    sha256 = "6a8557a2f8e1338e6edb2a07c345882389230ea24ffeb741a59621b7e8b56c59"
+    hash_sha256 = "6a8557a2f8e1338e6edb2a07c345882389230ea24ffeb741a59621b7e8b56c59"
     imphash = "a75bce97ca3ad49cfd36ed9cd9d13ddd"
     confidence = "high"
     tlp = "CLEAR"
@@ -25,7 +25,9 @@ rule WIN_LibGDK_Win32_2_24_28_i386_SampleFingerprint
     pe.is_pe and
     pe.is_dll() and
     pe.machine == pe.MACHINE_I386 and
+    /* Intentionally brittle — exact size of this specific sample; any recompile or packer change will invalidate this check */
     filesize == 837120 and
+    /* Timestamp field zeroed; suggests deliberate wiping, not a build artifact */
     pe.timestamp == 0 and
     pe.number_of_sections == 10 and
     pe.number_of_exports == 730 and
@@ -33,4 +35,3 @@ rule WIN_LibGDK_Win32_2_24_28_i386_SampleFingerprint
     $orig and
     2 of ($desc, $updt, $x1, $x2)
 }
-
