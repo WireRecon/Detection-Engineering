@@ -90,9 +90,9 @@ Fallback:  2 of ($vnd_*) and 5 of ($exp*) and 2 of ($flt*)        // vendor meta
 
 ## False Positives / Limitations
 
-**False positives:** Low. Legitimate `TRUFOS.DLL` in its expected Bitdefender installation directory is benign. The rule is intentionally designed to fire on the file regardless of path — investigation should focus on **where** the file is and **what loaded it**, not whether it matches.
+**False positives:** HIGH — this rule will fire on any legitimate Bitdefender installation containing `TRUFOS.DLL`. It is intended for context-based triage only, not standalone alerting. Correlate matches with file path and process context before acting.
 
-**Limitations:** This is a component identification rule, not a malware detection rule. Its value is entirely contextual — the file itself is not malicious, but its presence in unexpected locations or loaded by unexpected processes is a strong investigative lead.
+**Limitations:** This is a component identification rule, not a malware detection rule. Its value is entirely contextual — the file itself is not malicious, but its presence in unexpected locations or loaded by unexpected processes is a strong investigative lead. Note that this rule targets x86-64 only; an x86 build of the same component would not be caught.
 
 ---
 
