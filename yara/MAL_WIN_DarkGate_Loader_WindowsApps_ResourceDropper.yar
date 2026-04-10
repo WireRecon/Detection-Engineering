@@ -14,6 +14,7 @@ rule MAL_WIN_DarkGate_Loader_WindowsApps_ResourceDropper
 
   strings:
     // C2 staging / CDN module path artifacts (high signal)
+    /* C2 domain — will not survive infrastructure rotation; drop paths and execution chain alone may be sufficient for detection */
     $stage1 = "cdn3-adb1.online" ascii
     $mod1   = "abdwufkw/modules/cleanhelper.png" wide
     $mod2   = "abdwufkw/modules/runsysclean.png" wide
@@ -28,6 +29,7 @@ rule MAL_WIN_DarkGate_Loader_WindowsApps_ResourceDropper
     $drop6 = "extract_resource_to_file(RUNSYSCLEAN, full_path)" ascii
 
     // Execution chain (very high signal)
+    /* cleanmgr.exe is a legitimate Windows binary — only meaningful in combination with other indicators */
     $exec1 = "C:\\windows\\system32\\cleanmgr.exe" ascii
     $exec2 = "rundll32 cleanhelper.dll T34 /k funtic321 1" ascii
 
