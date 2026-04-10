@@ -15,6 +15,7 @@ rule MAL_AsyncRAT_NET_Plugins_Hosts_WalletStealer
 
   strings:
     // Capability / plugin markers (UTF-16 in .NET)
+    /* "DicordTokens" — misspelling is present in the malware itself; do not correct */
     $cap1  = "DicordTokens" wide
     $cap2  = "WDExclusion" wide
     $cap3  = "KillProxy" wide
@@ -30,7 +31,9 @@ rule MAL_AsyncRAT_NET_Plugins_Hosts_WalletStealer
     // Persistence indicators seen in NormalStartup.Install() (UTF-16)
     $per1 = "/c schtasks /create /f /sc onlogon /rl highest" wide
     $per2 = "\\nuR\\noisreVtnerruC\\swodniW\\tfosorciM\\erawtfoS" wide
+    /* Generic batch scripting pattern — only meaningful in combination with other indicators */
     $per3 = "@echo off" wide
+    /* Generic batch scripting pattern — only meaningful in combination with other indicators */
     $per4 = "timeout 3 > NUL" wide
 
     // Path / wallet-extension indicators (UTF-16)
@@ -41,7 +44,7 @@ rule MAL_AsyncRAT_NET_Plugins_Hosts_WalletStealer
   condition:
     uint16(0) == 0x5A4D and
     pe.imports("mscoree.dll", "_CorExeMain") and
-    6 of ($cap*) and
+    8 of ($cap*) and
     1 of ($path*) and
     2 of ($per*)
 }
